@@ -2,8 +2,8 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require('mongoose');
 const cors = require("cors");
-const bcrypt = require("bcrypt");
 const cookieparser= require("cookie-parser");
+const authRouter = require("./routers/authRouter");
 
 
 const app = express();
@@ -11,6 +11,9 @@ const app = express();
 app.use(express.json())
 app.use(cors());
 app.use(cookieparser());
+
+app.use("/app",authRouter)
+
 
 const port = process.env.PORT || 5000;
 const URL = process.env.MONGO_URI;
@@ -24,10 +27,6 @@ mongoose.connect(
     console.log("db is connected")
 });
 
-
-app.get("/",(req,res)=>{
-    res.status(500).send("hello");
-})
 
 
 app.listen(port, ()=> {
