@@ -27,7 +27,7 @@ const userCtrl = {
   },
   updateUser: async (req, res) => {
     try {
-      const { website, fullname, story, phone, address } = req.body;
+      const { website, fullname } = req.body;
       if (!fullname)
         return res.status(500).json({ msg: "Fullname is requires" });
 
@@ -36,9 +36,7 @@ const userCtrl = {
         {
           website,
           fullname,
-          story,
-          phone,
-          address,
+          bio,
         }
       );
 
@@ -73,6 +71,21 @@ const userCtrl = {
       );
 
       res.json({ newUser });
+    } catch (err) {
+      return res.status(500).json({ msg: err.message });
+    }
+  },
+  interest: async (req, res) => {
+    try {
+     
+      const user = await Users.findOneAndUpdate(
+        { _id: req.body._id },
+        {
+         interest,
+        }
+      );
+
+      res.json({ msg: "update success", user });
     } catch (err) {
       return res.status(500).json({ msg: err.message });
     }

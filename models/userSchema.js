@@ -8,6 +8,7 @@ const userSchema = mongoose.Schema({
     image:{type:String,default:""},
     bio:{type:String,default:"",maxLength:200},
     friends:[{type:mongoose.Types.ObjectId,ref:"user"}],
+    interest:[{type:mongoose.Types.ObjectId, ref:"interest"}],
     following:[{type:mongoose.Types.ObjectId,ref:"user"}],
 },{
     timestamps:true
