@@ -48,7 +48,7 @@ const messageCtrl = {
           recipients: req.user._id,
         })
         .sort("updatedAt")
-        .populate("recipients", "avatar fullname username");
+        .populate("recipients", "image fullname username");
 
       res.json({
         conversation,
@@ -73,7 +73,7 @@ const messageCtrl = {
         ],
       })
         .sort("-createdAt")
-        .populate("recipients", "avatar fullname username");
+        .populate("recipients", "image fullname username");
 
       res.json({
         message,

@@ -5,7 +5,6 @@ const userSchema = mongoose.Schema({
     fullname:{type:String,maxLength:50, minLength:3,required:true},
     email:{type:String,required:true},
     password:{type:String,required:true},
-    address:{type:String,default:''},
     image:{type:String,default:""},
     bio:{type:String,default:"",maxLength:200},
     friends:[{type:mongoose.Types.ObjectId,ref:"user"}],
