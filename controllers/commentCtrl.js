@@ -1,5 +1,5 @@
-const Comments = require("../models/commentModel");
-const Posts = require("../models/postModel");
+const Comments = require("../models/commentSchema");
+const Posts = require("../models/postSchema");
 const commentCtrl = {
   createComment: async (req, res) => {
     try {

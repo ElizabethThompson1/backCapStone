@@ -1,6 +1,6 @@
-const conversations = require("../models/conversationModel");
+const conversations = require("../models/conversationSchema");
 
-const Messages = require("../models/messageModel");
+const Messages = require("../models/messageSchema");
 
 const messageCtrl = {
   createMessage: async (req, res) => {
