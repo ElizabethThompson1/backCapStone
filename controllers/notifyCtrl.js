@@ -1,4 +1,4 @@
-const Notifies = require("../models/notifyModel");
+const Notifies = require("../models/notifySchema");
 
 const notifyCtrl = {
   createnotify: async (req, res) => {
