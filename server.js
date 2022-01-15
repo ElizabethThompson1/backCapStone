@@ -28,6 +28,10 @@ app.use("/api",postRouter)
 const port = process.env.PORT || 5000;
 const URL = process.env.MONGO_URI;
 
+io.on('connection', socket=>{
+    socketServer(socket)
+})
+
 mongoose.connect(
     URL,
     {
