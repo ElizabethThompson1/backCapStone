@@ -42,7 +42,7 @@ const notifyCtrl = {
         recipients: req.user._id,
       })
         .sort("createdAt")
-        .populate("user", "avatar fullname username");
+        .populate("user", "image fullname username");
 
       return res.json({ notifies });
     } catch (err) {
